@@ -9,15 +9,19 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 exports.default = function (store) {
-  return function (mapper) {
-    if (!mapper) {
-      mapper = function mapper(newState, oldState) {
+  return function (_mapper) {
+    if (!_mapper) {
+      _mapper = function mapper(newState, oldState) {
         return { state: newState };
       };
-    } else if ((typeof mapper === 'undefined' ? 'undefined' : _typeof(mapper)) === 'object') {
+    } else if (typeof _mapper === 'string') {
+      _mapper = function mapper(newState, oldState) {
+        return _defineProperty({}, _mapper, newState);
+      };
+    } else if ((typeof _mapper === 'undefined' ? 'undefined' : _typeof(_mapper)) === 'object') {
       (function () {
-        var map = mapper;
-        mapper = function mapper(newState, oldState) {
+        var map = _mapper;
+        _mapper = function _mapper(newState, oldState) {
           return _lodash2.default.mapValues(map, function (value, key) {
             return _lodash2.default.get(newState, value || key);
           });
@@ -29,7 +33,7 @@ exports.default = function (store) {
         _inherits(StateProvider, _React$Component);
 
         function StateProvider() {
-          var _ref;
+          var _ref2;
 
           var _temp, _this, _ret2;
 
@@ -39,7 +43,7 @@ exports.default = function (store) {
             args[_key] = arguments[_key];
           }
 
-          return _ret2 = (_temp = (_this = _possibleConstructorReturn(this, (_ref = StateProvider.__proto__ || Object.getPrototypeOf(StateProvider)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+          return _ret2 = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = StateProvider.__proto__ || Object.getPrototypeOf(StateProvider)).call.apply(_ref2, [this].concat(args))), _this), _this.state = {
             oldState: store.get(),
             newState: store.get()
           }, _temp), _possibleConstructorReturn(_this, _ret2);
@@ -71,7 +75,7 @@ exports.default = function (store) {
             var newState = _state.newState;
             var oldState = _state.oldState;
 
-            var state = mapper(newState, oldState);
+            var state = _mapper(newState, oldState);
             return Object.assign({}, state, this.props);
           }
         }]);
@@ -97,3 +101,5 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }

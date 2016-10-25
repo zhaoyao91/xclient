@@ -1,6 +1,6 @@
 import RouteParser from 'route-parser';
 import qs from 'querystringify';
-import urlHelper from './url_helper';
+import locationState from './location_state';
 
 export default class Route {
   /**
@@ -24,6 +24,6 @@ export default class Route {
   }
 
   go(params, query) {
-    urlHelper.changeUrl(this.path(params, query));
+    locationState.setPath(this.path(params, query));
   }
 }

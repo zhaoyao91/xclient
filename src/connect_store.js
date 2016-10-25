@@ -8,6 +8,11 @@ export default function(store) {
         return { state: newState }
       };
     }
+    else if (typeof mapper === 'string') {
+      mapper = (newState, oldState) => {
+        return { [mapper]: newState }
+      }
+    }
     else if (typeof mapper === 'object') {
       const map = mapper;
       mapper = (newState, oldState) => {

@@ -12,9 +12,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _url_helper = require('./url_helper');
+var _location_state = require('./location_state');
 
-var _url_helper2 = _interopRequireDefault(_url_helper);
+var _location_state2 = _interopRequireDefault(_location_state);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45,7 +45,7 @@ var Link = function (_React$Component) {
         this.props.onClick(e);
       } else if (this.props.href) {
         e.preventDefault();
-        _url_helper2.default.changeUrl(this.props.href);
+        _location_state2.default.setPath(this.props.href);
       }
     }
   }]);

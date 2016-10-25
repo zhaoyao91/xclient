@@ -14,9 +14,9 @@ var _querystringify = require('querystringify');
 
 var _querystringify2 = _interopRequireDefault(_querystringify);
 
-var _url_helper = require('./url_helper');
+var _location_state = require('./location_state');
 
-var _url_helper2 = _interopRequireDefault(_url_helper);
+var _location_state2 = _interopRequireDefault(_location_state);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -49,7 +49,7 @@ var Route = function () {
   }, {
     key: 'go',
     value: function go(params, query) {
-      _url_helper2.default.changeUrl(this.path(params, query));
+      _location_state2.default.setPath(this.path(params, query));
     }
   }]);
 

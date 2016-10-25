@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.bindLocation = exports.connectStore = exports.createCachedPages = exports.Pages = exports.Route = exports.Store = exports.singleton = exports.mountRootView = exports.Link = exports.updateByProps = exports.composeAll = exports.urlHelper = undefined;
+exports.Router = exports.connectLocation = exports.locationState = exports.connectStore = exports.createCachedPages = exports.Pages = exports.Route = exports.Store = exports.singleton = exports.mountRootView = exports.Link = exports.updateByProps = exports.composeAll = undefined;
 
 var _mount_root_view = require('./mount_root_view');
 
@@ -20,10 +20,6 @@ var _store2 = _interopRequireDefault(_store);
 var _connect_store = require('./connect_store');
 
 var _connect_store2 = _interopRequireDefault(_connect_store);
-
-var _bind_location = require('./bind_location');
-
-var _bind_location2 = _interopRequireDefault(_bind_location);
 
 var _route = require('./route');
 
@@ -49,13 +45,20 @@ var _compose_all = require('./compose_all');
 
 var _compose_all2 = _interopRequireDefault(_compose_all);
 
-var _url_helper = require('./url_helper');
+var _location_state = require('./location_state');
 
-var _url_helper2 = _interopRequireDefault(_url_helper);
+var _location_state2 = _interopRequireDefault(_location_state);
+
+var _connect_location = require('./connect_location');
+
+var _connect_location2 = _interopRequireDefault(_connect_location);
+
+var _router = require('./router');
+
+var _router2 = _interopRequireDefault(_router);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.urlHelper = _url_helper2.default;
 exports.composeAll = _compose_all2.default;
 exports.updateByProps = _update_by_props2.default;
 exports.Link = _link2.default;
@@ -66,4 +69,6 @@ exports.Route = _route2.default;
 exports.Pages = _pages2.default;
 exports.createCachedPages = _cached_pages2.default;
 exports.connectStore = _connect_store2.default;
-exports.bindLocation = _bind_location2.default;
+exports.locationState = _location_state2.default;
+exports.connectLocation = _connect_location2.default;
+exports.Router = _router2.default;

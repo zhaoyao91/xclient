@@ -2,17 +2,17 @@ import mountRootView from './mount_root_view';
 import singleton from './singleton';
 import Store from './store';
 import connectStore from './connect_store';
-import bindLocation from './bind_location';
 import Route from './route';
 import Pages from './pages';
 import createCachedPages from './cached_pages';
 import Link from './link';
 import updateByProps from './update_by_props';
 import composeAll from './compose_all';
-import urlHelper from './url_helper';
+import locationState from './location_state';
+import connectLocation from './connect_location';
+import Router from './router';
 
 export {
-  urlHelper,
   composeAll,
   updateByProps,
   Link,
@@ -23,5 +23,7 @@ export {
   Pages,
   createCachedPages,
   connectStore,
-  bindLocation,
+  locationState,
+  connectLocation,
+  Router,
 }

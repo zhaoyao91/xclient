@@ -1,21 +1,22 @@
 # XClient Tools
-Tools for XClient architecture.
+Tools for [XClient architecture](https://github.com/xclient/docs).
 
 ## Categories
 - [Usage](#usage)
 - [Tools](#tools)
-  - [bindLocation](#bindlocation)
   - [createCachedPages](#createcachedpages)
   - [composeAll](#composeall)
+  - [connectLocation](#connectLocation)
   - [connectStore](#connectstore)
   - [Link](#link)
+  - [locationState](#locationstate)
   - [mountRootView](#mountrootview)
   - [Pages](#pages)
   - [Route](#route)
+  - [Router](#router)
   - [singleton](#singleton)
   - [Store](#store)
   - [updateByProps](#updatebyprops)
-  - [urlHelper](#urlhelper)
 
 ## Usage
 
@@ -31,14 +32,6 @@ import {xxx} from 'xclient'
 ```
 
 ## Tools
-
-### bindLocation
-**func(store, stateName = 'location')**
-
-bind current location(url) of browser with a state in the store.
-
-the structure of bound state is {**pathname**, **query**}, where pathname is the same as location.pathname and query is
-an object translated from location.search.
 
 ### createCachedPages
 **func(options): component**
@@ -61,14 +54,28 @@ compose component with all composers.
 
 - composer - func(component): component
 
+### connectLocation
+**func([mapper])(component): component
+
+create a container for a component to provide it with location state.
+
+- mapper - function, string or object
+  - function - func(location): props
+  - not provided - the whole state is mapped to props.location
+  - string - the whole state is mapped to props.key, where key is this value
+  - object - for each item, key is the prop key and value is the path of state. if value is falsy, the key is also used
+  as the state path
+
 ### connectStore
-**func(store)(mapper)(component): component**
+**func(store)([mapper])(component): component**
 
 create a container for a component which is connected to the store and will map the state of the store to the props of 
 the component when the state update.
 
-- mapper - function or object
+- mapper - function, string or object
   - function - func(newState, oldState): props
+  - not provided - the whole state is mapped to props.state
+  - string - the whole state is mapped to props.key, where key is this value
   - object - for each item, key is the prop key and value is the path of state. if value is falsy, the key is also used
   as the state path
 
@@ -78,6 +85,21 @@ the component when the state update.
 a normal link component as `<a/>` except that if props.href is specified, clicking it will not trigger page reloading 
 but only change the url.
 
+### locationState
+**singleton**
+
+a singleton representing the browser location and providing apis to get, manipulate and listen to changes of the location.
+
+- methods
+  - getPath(): string - return the pathname with query string
+  - getPathname(): string - return the pathname
+  - getQuery(): object - return the query object
+  - setPath(path)
+  - setPathname(pathname)
+  - setQuery(query)
+  - subscribe(callback): id - callback is func({path, pathname, query})
+  - unsubscribe(id) - id is the id returned from subscribe
+  
 ### mountRootView
 **func(component)**
 
@@ -110,6 +132,19 @@ A route is defined by a path pattern.
   - path(params, query): path - format a path
   - go(params, query) - format a path and change the url to it
   
+### Router
+**class**
+
+A router is a collection of routes and provide a set of methods for convenience
+
+- methods
+  - constructor([routes]) - init the router with optional routes
+  - route(id, path, options) - define a route
+  - match(path): {id, params, route} - try to match a path. return undefined if no matched route
+  - path(id, params, query) - build path
+  - go(id, params, query) - build path and go to it
+  - current() - try to match by current pathname
+  
 ### singleton
 **func(builder): getter**
 
@@ -136,13 +171,6 @@ create a container for a component which will only update if props change.
 
 - props - strings, specify which props should be compared. if not provided, all props will be compared.
 - deep - a boolean flag which indicate if the props should be compared deeply.
-
-### urlHelper
-**object of functions**
-
-- onUrlChange(listener)
-- offUrlChange(listener)
-- changeUrl(url)
 
 ## License
 MIT
