@@ -29,6 +29,16 @@ var Router = function () {
       this.routes[id] = new _route2.default(path, options);
     }
   }, {
+    key: 'setRoute',
+    value: function setRoute(id, route) {
+      this.routes[id] = route;
+    }
+  }, {
+    key: 'setRoutes',
+    value: function setRoutes(routes) {
+      this.routes = routes;
+    }
+  }, {
     key: 'match',
     value: function match(path) {
       return this._findOne(function (id, route) {

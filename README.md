@@ -140,6 +140,8 @@ A router is a collection of routes and provide a set of methods for convenience
 - methods
   - constructor([routes]) - init the router with optional routes
   - route(id, path, options) - define a route
+  - setRoute(id, route)
+  - setRoutes(id, routes)
   - match(path): {id, params, route} - try to match a path. return undefined if no matched route
   - path(id, params, query) - build path
   - go(id, params, query) - build path and go to it

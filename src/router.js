@@ -9,6 +9,14 @@ export default class Router {
     this.routes[ id ] = new Route(path, options);
   }
 
+  setRoute(id, route) {
+    this.routes[ id ] = route;
+  }
+
+  setRoutes(routes) {
+    this.routes = routes;
+  }
+
   match(path) {
     return this._findOne((id, route) => {
       const params = route.match(path);

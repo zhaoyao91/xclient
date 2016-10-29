@@ -1,3 +1,6 @@
+### 0.2.1
+- add setRoute and setRoutes methods for **Router**
+
 ### 0.2.0
 - remove **bindLocation**
 - remove **urlHelper**
