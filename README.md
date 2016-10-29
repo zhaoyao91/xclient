@@ -101,7 +101,7 @@ a singleton representing the browser location and providing apis to get, manipul
   - unsubscribe(id) - id is the id returned from subscribe
   
 ### mountRootView
-**func(component)**
+**func(node)**
 
 mount root view component into body.
 
