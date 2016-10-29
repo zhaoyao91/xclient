@@ -1,15 +1,15 @@
 {
   "name": "xclient",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "xclient tools",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xclient/tools.git"
+    "url": "git+https://github.com/zhaoyao91/xclient.git"
   },
   "bugs": {
-    "url": "https://github.com/xclient/tools/issues"
+    "url": "https://github.com/zhaoyao91/xclient/issues"
   },
-  "homepage": "https://github.com/xclient/tools#readme",
+  "homepage": "https://github.com/zhaoyao91/xclient#readme",
   "keywords": [
     "react",
     "xclient",
@@ -19,7 +19,7 @@
   "scripts": {
     "build": "babel src -d dist"
   },
-  "author": "xclient",
+  "author": "zhaoyao91",
   "license": "MIT",
   "peerDependencies": {
     "react": "^15.0.0",

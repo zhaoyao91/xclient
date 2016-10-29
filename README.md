@@ -1,7 +1,10 @@
-# XClient Tools
-Tools for [XClient architecture](https://github.com/xclient/docs).
+# XClient
+A set of tools and notes from my experiences of building middle scale projects.
 
-## Categories
+## Notes
+- [Chinese](https://shimo.im/doc/BNquuzSVEZUXf2lb)
+
+## Tools
 - [Usage](#usage)
 - [Tools](#tools)
   - [createCachedPages](#createcachedpages)

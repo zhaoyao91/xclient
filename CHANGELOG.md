@@ -1,3 +1,6 @@
+### 0.2.2
+- taken by zhaoyao91
+
 ### 0.2.1
 - add setRoute and setRoutes methods for **Router**
 
