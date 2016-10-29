@@ -4,12 +4,14 @@ A set of tools and notes from my experiences of building middle scale projects.
 ## Notes
 - [Chinese](https://shimo.im/doc/BNquuzSVEZUXf2lb)
 
-## Tools
-- [Usage](#usage)
-- [Tools](#tools)
+## Tools Categories
+- [Setup](#setup)
+  - [Installation](#installation)
+  - [Import Tools](#import-tools)
+- [Api](#tools-api)
   - [createCachedPages](#createcachedpages)
   - [composeAll](#composeall)
-  - [connectLocation](#connectLocation)
+  - [connectLocation](#connectlocation)
   - [connectStore](#connectstore)
   - [Link](#link)
   - [locationState](#locationstate)
@@ -21,7 +23,7 @@ A set of tools and notes from my experiences of building middle scale projects.
   - [Store](#store)
   - [updateByProps](#updatebyprops)
 
-## Usage
+## Setup
 
 ### Installation
 ```
@@ -34,7 +36,7 @@ npm i --save react react-dom
 import {xxx} from 'xclient'
 ```
 
-## Tools
+## Tools Api
 
 ### createCachedPages
 **func(options): component**
@@ -58,7 +60,7 @@ compose component with all composers.
 - composer - func(component): component
 
 ### connectLocation
-**func([mapper])(component): component
+**func([mapper])(component): component**
 
 create a container for a component to provide it with location state.
 
