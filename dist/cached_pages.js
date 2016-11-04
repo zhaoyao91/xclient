@@ -48,9 +48,9 @@ exports.default = function (options) {
     _createClass(CachedPages, [{
       key: 'render',
       value: function render() {
-        var _props = this.props;
-        var location = _props.location;
-        var routes = _props.routes;
+        var _props = this.props,
+            location = _props.location,
+            routes = _props.routes;
 
         var _loop = function _loop(id) {
           var route = routes[id];

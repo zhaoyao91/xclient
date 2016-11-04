@@ -3,15 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Router = exports.connectLocation = exports.locationState = exports.connectStore = exports.createCachedPages = exports.Pages = exports.Route = exports.Store = exports.singleton = exports.mountRootView = exports.Link = exports.updateByProps = exports.composeAll = undefined;
+exports.Router = exports.connectLocation = exports.locationState = exports.connectStore = exports.createCachedPages = exports.Pages = exports.Route = exports.Store = exports.mountRootView = exports.Link = exports.updateByProps = exports.composeAll = undefined;
 
 var _mount_root_view = require('./mount_root_view');
 
 var _mount_root_view2 = _interopRequireDefault(_mount_root_view);
-
-var _singleton = require('./singleton');
-
-var _singleton2 = _interopRequireDefault(_singleton);
 
 var _store = require('./store');
 
@@ -63,7 +59,6 @@ exports.composeAll = _compose_all2.default;
 exports.updateByProps = _update_by_props2.default;
 exports.Link = _link2.default;
 exports.mountRootView = _mount_root_view2.default;
-exports.singleton = _singleton2.default;
 exports.Store = _store2.default;
 exports.Route = _route2.default;
 exports.Pages = _pages2.default;

@@ -148,16 +148,10 @@ A router is a collection of routes and provide a set of methods for convenience
   - setRoute(id, route)
   - setRoutes(id, routes)
   - match(path): {id, params, route} - try to match a path. return undefined if no matched route
-  - path(id, params, query) - build path
-  - go(id, params, query) - build path and go to it
+  - path(id | pathname, params, query) - build path
+  - go(id | pathname, params, query) - build path and go to it
   - current() - try to match by current pathname
   
-### singleton
-**func(builder): getter**
-
-build a singleton module. the builder should define how to build and return the module, the getter will always return
-the same one built from builder. the args of builder and getter are same.
-
 ### Store
 **class**
 

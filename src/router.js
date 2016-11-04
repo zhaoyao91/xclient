@@ -1,4 +1,6 @@
 import Route from './route';
+import qs from 'querystringify';
+import locationState from './location_state';
 
 export default class Router {
   constructor(routes = []) {
@@ -27,14 +29,12 @@ export default class Router {
   path(id, params, query) {
     const route = this.routes[ id ];
     if (route) return route.path(params, query);
+    else return id + qs.stringify(query, true);
   }
 
   go(id, params, query) {
-    const route = this.routes[ id ];
-    if (route) {
-      route.go(params, query);
-      return true;
-    }
+    const path = this.path(id, params, query);
+    locationState.setPath(path);
   }
 
   current() {

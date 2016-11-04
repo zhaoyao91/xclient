@@ -10,6 +10,14 @@ var _route = require('./route');
 
 var _route2 = _interopRequireDefault(_route);
 
+var _querystringify = require('querystringify');
+
+var _querystringify2 = _interopRequireDefault(_querystringify);
+
+var _location_state = require('./location_state');
+
+var _location_state2 = _interopRequireDefault(_location_state);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -50,16 +58,13 @@ var Router = function () {
     key: 'path',
     value: function path(id, params, query) {
       var route = this.routes[id];
-      if (route) return route.path(params, query);
+      if (route) return route.path(params, query);else return id + _querystringify2.default.stringify(query, true);
     }
   }, {
     key: 'go',
     value: function go(id, params, query) {
-      var route = this.routes[id];
-      if (route) {
-        route.go(params, query);
-        return true;
-      }
+      var path = this.path(id, params, query);
+      _location_state2.default.setPath(path);
     }
   }, {
     key: 'current',

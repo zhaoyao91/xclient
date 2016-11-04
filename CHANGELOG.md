@@ -1,3 +1,7 @@
+### 0.3.0
+- remove **singleton**
+- enhance **Router.path** and **Router.go** to accept pathname as id
+
 ### 0.2.2
 - taken by zhaoyao91
 

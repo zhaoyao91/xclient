@@ -71,9 +71,9 @@ exports.default = function (store) {
         }, {
           key: 'getProps',
           value: function getProps() {
-            var _state = this.state;
-            var newState = _state.newState;
-            var oldState = _state.oldState;
+            var _state = this.state,
+                newState = _state.newState,
+                oldState = _state.oldState;
 
             var state = _mapper(newState, oldState);
             return Object.assign({}, state, this.props);

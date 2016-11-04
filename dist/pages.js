@@ -30,9 +30,9 @@ var Pages = function (_React$Component) {
   _createClass(Pages, [{
     key: "render",
     value: function render() {
-      var _props = this.props;
-      var location = _props.location;
-      var routes = _props.routes;
+      var _props = this.props,
+          location = _props.location,
+          routes = _props.routes;
 
 
       for (var id in routes) {

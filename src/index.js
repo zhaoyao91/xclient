@@ -1,5 +1,4 @@
 import mountRootView from './mount_root_view';
-import singleton from './singleton';
 import Store from './store';
 import connectStore from './connect_store';
 import Route from './route';
@@ -17,7 +16,6 @@ export {
   updateByProps,
   Link,
   mountRootView,
-  singleton,
   Store,
   Route,
   Pages,
