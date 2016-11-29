@@ -19,7 +19,6 @@ A set of tools and notes from my experiences of building middle scale projects.
   - [Pages](#pages)
   - [Route](#route)
   - [Router](#router)
-  - [singleton](#singleton)
   - [Store](#store)
   - [updateByProps](#updatebyprops)
 
